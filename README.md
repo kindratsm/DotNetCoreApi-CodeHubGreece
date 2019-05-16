@@ -9,17 +9,17 @@
 API based on [OData](https://www.odata.org) protocol ([documentation](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html))\
 Each data model is exposed via OData and can be accessed by following route: `/odata/[DataModel]`
 ### Supported HTTP methods:
-##### Get
-###### Get existing objects
+#### Get
+Get existing objects
 ```
 GET http://localhost:5000/odata/[DataModel]
 ```
-###### Get existing object by ID
+Get existing object by ID
 ```
 GET http://localhost:5000/odata/[DataModel]/[ID]
 ```
-##### Post
-###### Insert object
+#### Post
+Insert object
 ```
 POST http://localhost:5000/odata/[DataModel]
 
@@ -28,7 +28,7 @@ Request body:
     Id: 0 | null
 }
 ```
-###### Update object
+Update object
 ```
 POST http://localhost:5000/odata/[DataModel]
 
@@ -37,25 +37,25 @@ Request body:
     Id: ID > 0
 }
 ```
-##### Delete
-###### Delete object
+#### Delete
+Delete object
 ```
 DELETE http://localhost:5000/odata/[DataModel]/[ID]
 ```
 ### Examples:
-###### Get all countries:
+Get all countries:
 ```
 GET http://localhost:5000/odata/Country
 ```
-###### Get country with ID `87`:
+Get country with ID `87`:
 ```
 GET http://localhost:5000/odata/Country/87
 ```
-###### Get country with Code `GR`:
+Get country with Code `GR`:
 ```
 GET http://localhost:5000/odata/Country?$filter=Code eq 'GR'
 ```
-###### Create new country object
+Create new country object
 ```
 POST http://localhost:5000/odata/Country
 
@@ -66,7 +66,7 @@ Request body:
     Name: 'New Country'
 }
 ```
-###### Update country object
+Update country object
 ```
 POST http://localhost:5000/odata/Country
 
@@ -77,7 +77,7 @@ Request body:
     Name: 'Greece (default)'
 }
 ```
-###### Delete country
+Delete country with ID `87`
 ```
 DELETE http://localhost:5000/odata/Country/87
 ```
