@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using System;
 using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
 
 namespace DotNetCoreApi_CodeHubGreece.Helpers
 {

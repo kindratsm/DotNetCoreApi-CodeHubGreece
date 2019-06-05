@@ -25,22 +25,35 @@ namespace DotNetCoreApi_CodeHubGreece
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Init OData
             services.AddOData();
+
+            // Init DBContext dependency injection
             services.AddDbContext<ModelContext>();
+
+            // Init CORS
+            services.AddCors();
+
+            // Init MVC
             services.AddMvcCore((options) =>
             {
                 options.EnableEndpointRouting = false;
                 options.Conventions.Add(new Helpers.GenericODataModelConvention());
+                options.OutputFormatters.Insert(0, new Helpers.CustomODataOutputFormatter());
             })
                 .ConfigureApplicationPartManager(apm => apm.FeatureProviders.Add(new Helpers.GenericODataFeatureProvider()))
                 .AddJsonFormatters(options => options.ReferenceLoopHandling = ReferenceLoopHandling.Ignore)
-                .AddCors()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseHsts();
+            app.UseCors((builder) =>
+            {
+                builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            });
             app.UseMvc((routeBuilder) =>
             {
                 routeBuilder.MapODataServiceRoute("odata", "odata", GetEdmModel());
