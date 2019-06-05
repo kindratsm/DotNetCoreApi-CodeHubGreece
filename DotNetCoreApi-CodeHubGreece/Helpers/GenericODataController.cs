@@ -15,7 +15,7 @@ namespace DotNetCoreApi_CodeHubGreece.Helpers
             _db = db;
         }
 
-        private bool Exists(UInt64 id)
+        private bool Exists(Int64 id)
         {
             if (id <= 0)
             {
@@ -32,7 +32,7 @@ namespace DotNetCoreApi_CodeHubGreece.Helpers
         }
 
         [EnableQuery]
-        public IActionResult Get([FromODataUri] UInt64 key)
+        public IActionResult Get([FromODataUri] Int64 key)
         {
             T model = _db.Set<T>().FirstOrDefault(c => c.Id == key);
             if (model == null)

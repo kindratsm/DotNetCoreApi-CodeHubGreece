@@ -7,10 +7,10 @@ namespace DotNetCoreApi_CodeHubGreece.Models
     public class InstallationNote : CommonModel
     {
 
-        public UInt64 InstallationId { get; set; }
+        public Int64 InstallationId { get; set; }
         [ForeignKey("InstallationId")]
         public Installation Installation { get; set; }
-        public UInt64 UserId { get; set; }
+        public Int64 UserId { get; set; }
         [ForeignKey("UserId")]
         public User User { get; set; }
         public string Name { get; set; }

@@ -9,7 +9,7 @@ namespace DotNetCoreApi_CodeHubGreece.Models
 
         public string Name { get; set; }
         public string Description { get; set; }
-        public UInt64 CountryId { get; set; }
+        public Int64 CountryId { get; set; }
         [ForeignKey("CountryId")]
         public virtual Country Country { get; set; }
 

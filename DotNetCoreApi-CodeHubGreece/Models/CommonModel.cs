@@ -7,7 +7,7 @@ namespace DotNetCoreApi_CodeHubGreece.Models
     {
 
         [Key]
-        public UInt64 Id { get; set; }
+        public Int64 Id { get; set; }
 
     }
 }

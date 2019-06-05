@@ -8,7 +8,7 @@ namespace DotNetCoreApi_CodeHubGreece.Models
     {
 
         public DateTime ReleaseDate { get; set; }
-        public UInt64 ProductId { get; set; }
+        public Int64 ProductId { get; set; }
         [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
         public string VersionNumber { get; set; }
