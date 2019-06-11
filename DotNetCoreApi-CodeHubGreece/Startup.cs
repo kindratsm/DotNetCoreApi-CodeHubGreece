@@ -78,7 +78,7 @@ namespace DotNetCoreApi_CodeHubGreece
             app.UseMvc((routeBuilder) =>
             {
                 routeBuilder.MapODataServiceRoute("odata", "odata", GetEdmModel());
-                routeBuilder.Select().Expand().Filter().OrderBy().Count();
+                routeBuilder.Select().Expand().Filter().OrderBy().MaxTop(null).Count();
             });
 
             // Enable middleware to serve generated Swagger as a JSON endpoint
