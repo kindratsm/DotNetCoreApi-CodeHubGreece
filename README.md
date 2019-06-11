@@ -4,6 +4,7 @@
 1. Download and unzip [release](https://github.com/kindratsm/DotNetCoreApi-CodeHubGreece/releases) for your platform
 2. Start executable file `DotNetCoreApi-CodeHubGreece`
 3. API will be now available on following URL: [http://localhost:5000](http://localhost:5000)
+4. Swagger will be available on following URL: [http://localhost:5000/swagger](http://localhost:5000/swagger)
 
 ### API
 API based on [OData](https://www.odata.org) protocol ([documentation](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html))\
