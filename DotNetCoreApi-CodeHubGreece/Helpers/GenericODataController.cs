@@ -73,7 +73,7 @@ namespace DotNetCoreApi_CodeHubGreece.Helpers
             }
         }
 
-        public IActionResult Delete([FromODataUri] UInt64 key)
+        public IActionResult Delete([FromODataUri] Int64 key)
         {
             T model = _db.Set<T>().Find(key);
             if (model == null)
